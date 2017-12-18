@@ -19,7 +19,6 @@ public class DoublyLinkedList {
 	public DoublyLinkedList getNext() { return next; } 
 	public DoublyLinkedList getPrevious() { return previous; } 
 
-	
 	public void setValue(Object v) { value = v; }
 	public void setNext(DoublyLinkedList nx) { next = nx; } 
 	public void setPrevious(DoublyLinkedList prev) { previous = prev; } 

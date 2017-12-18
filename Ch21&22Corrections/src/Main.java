@@ -2,13 +2,11 @@
 public class Main {
 
 	public static void main(String[] args) {
-		SinglyLinkedList numbers = new SinglyLinkedList(1);
-		numbers.setNext(new SinglyLinkedList(2) );
-		numbers.setNext(new SinglyLinkedList(3) );
+		int[] objs = new int[5,4,3,2,1];
 		
-		for(SinglyLinkedList number: numbers) 
-			System.out.println(number);
-
-	
+		SinglyLinkedList numbers = new SinglyLinkedList();
+		
+		for(ListNode node = numbers.getHead(); node != null; node = node.getNext()) 
+			System.out.println(node.getValue());
 	}
 }

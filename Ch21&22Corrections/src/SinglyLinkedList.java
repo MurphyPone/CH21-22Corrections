@@ -1,31 +1,31 @@
 import java.util.Iterator;
 
-class SinglyLinkedList implements Iterable{
-	private Object value;
-	private SinglyLinkedList next;
+class SinglyLinkedList {
+	private ListNode head;
+	private ListNode tail; //tail does not work
+	private int nodeCount;
 	
-	public SinglyLinkedList(Object v) {
-		value = v;
-		next = null;
+	public SinglyLinkedList(ListNode hed) {
+		head = hed;
+		tail = null;
+		nodeCount = 0;
 	}
 	
-	public SinglyLinkedList(Object v, SinglyLinkedList nx) {
-		value = v;
-		next = nx;
+	public ListNode getHead() { return head; }
+	
+	
+	public SinglyLinkedList(Object[] values) { 
+		for(Object value: values) {
+			ListNode node = new ListNode(value, null);
+				if(head == null) 
+					head = node;
+				else 
+					tail.setNext(node);
+				tail = node;
+		}
+		
+		nodeCount = values.length;
 	}
 	
-	public Object getValue() {return value; }
-	public SinglyLinkedList getNext() { return next; } 
-	
-	public void setValue(Object v) { value = v; }
-	public void setNext(SinglyLinkedList nx) { next = nx; } 
-	
-	public String toString() {return (String) value;}
-
-	@Override
-	public Iterator iterator() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
+	public void addFirst(Object value) { head = new ListNode(value, head); }
 }
