@@ -21,13 +21,13 @@ public class Stack {
 	}
 	
 	public void push(int x) {
-		items[sp] = x;		//items[sp++] = x
-		sp++;
+		if(sp >= items.length)
+			throw new IndexOutOfBoundsException("Stack is full");
+		else items[sp++] = x;	
 	}
 	
 	public int pop() {
-		sp--;
-		return items[sp];
+		return items[--sp];
 	}
 	
 	//Destructive toString

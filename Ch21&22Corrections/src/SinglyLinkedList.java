@@ -13,7 +13,6 @@ class SinglyLinkedList {
 	
 	public ListNode getHead() { return head; }
 	
-	
 	public SinglyLinkedList(Object[] values) { 
 		for(Object value: values) {
 			ListNode node = new ListNode(value, null);
@@ -45,14 +44,23 @@ class SinglyLinkedList {
 		if(head == null)		//Checks if head is null (no objects, so false)
 			return false;
 		else {
-			for(ListNode node = head; node != null; node = node.getNext()) {
-				if(node.getValue().equals(obj)) {
-					if(node.getNext() == null) //at the end of the list
-						node = null;		//does this count as removal?
-					else //not at the end of the list
-						node.setNext(node.getNext());	
-					return true;
+			ListNode prev = null;  //temp previous node
+			ListNode node = head;	//copy of the head 
+			
+			while(node != null) { 
+				if(node.getValue().equals(obj)) {		//If equal
+					if(node.getNext() == null) { //at the end of the list
+						prev.setNext(null);
+						return true;
+					} else if(prev == null) {
+						head = node.getNext();
+					} else {//not at the end of the list
+						prev.setNext(node.getNext());
+						return true;
+					}
 				}
+				prev = node;
+				node = node.getNext();
 			}
 		}
 		return false;

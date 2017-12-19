@@ -15,17 +15,18 @@ public class Main {
 		System.out.println(numbers);
 		
 		System.out.println("\nTry Removal\n");
-		System.out.println(numbers.remove("four") );
-		System.out.println(numbers);
+		System.out.println(numbers.remove("one") );
+		System.out.println(numbers +"\n");
 		
 		///STACK TESTING
 		
-		Stack ints = new Stack();
-		for(int i = 0; i < 10; i ++) {
-			ints.push(i);
+		Stack nums = new Stack();
+		
+		for(int i = 0; i < 1024; i ++) {
+			nums.push(i);
 		}
 		
-		System.out.print("heres the stack:\n" + ints);
+		System.out.print("heres the stack:\n" + nums);
 		
 	}
 }
