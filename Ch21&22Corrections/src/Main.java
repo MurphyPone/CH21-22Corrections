@@ -30,9 +30,14 @@ public class Main {
 			objs2[2] = "ccc";
 			objs2[3] = "ddd";
 			objs2[4] = "eee";
-		DoublyLinkedList letters = new DoublyLinkedList(objs2);
+			
+		DoublyLinkedList letters = new DoublyLinkedList(objs2); 
+		
 		letters.traverseBackwards();	//before fix
-		System.out.println("\n 	BackLinks Fixed \n");
+		letters.traverseForwards();	//before fix
+
+		System.out.println("\nBackLinks Fixed \n");
+		
 		letters.fixBackLinks(); //Part 1 #11
 		letters.traverseBackwards();
 		

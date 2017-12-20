@@ -9,10 +9,10 @@ public class ListNode2 {
 		previous = null;
 	}
 	
-	public ListNode2(Object v, ListNode2 nx, ListNode2 prev) {
+	public ListNode2(Object v, ListNode2 prev, ListNode2 nx) {
 		value = v;
 		next = nx;
-		previous = prev;
+		//previous = prev;		//Stoopid sevan
 	}
 	
 	public Object getValue() { return value; }
